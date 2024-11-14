@@ -1,5 +1,5 @@
 // Importing necessary types
-import { UserData, TaskData, LeaderboardData, ReferralData, RankingData, UserRankData } from './types'; // Import types if defined in a types file
+import { UserData, TaskData, LeaderboardData, ReferralData, RankingData, UserRankData } from './Types'; // Import types if defined in a types file
 
 // Function to fetch user data by Telegram ID
 export const getUserData = async (userId: string): Promise<UserData> => {
