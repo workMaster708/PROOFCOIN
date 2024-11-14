@@ -1,2 +1,2 @@
 // src/types.d.ts
-declare module './types';
+declare module './api/Types';
