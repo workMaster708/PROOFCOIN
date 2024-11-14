@@ -1,0 +1,157 @@
+/* Base styles for the entire page */
+html, body {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  font-family: 'Arial', sans-serif; /* Font for the app */
+  background-color: transparent; /* Clear transparent background */
+  color: #e0e0e0; /* Light text color for contrast */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Leaderboard container */
+.leaderboard-container {
+  width: 100vw; /* Full viewport width */
+  /* Remove height: 100vh; */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center; /* Center align the content */
+  background-color: transparent; /* Clear transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+  padding: 0; /* No padding */
+  margin: 0; /* No margin */
+  min-height: 100vh; /* Ensure the container covers at least the viewport height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Heading styles */
+.h12 {
+  text-align: center; /* Center align the heading */
+  color: #f0f0f0; /* Light heading color */
+  margin-top: 20px; /* Space above the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  font-family: 'Arial', sans-serif; /* Font styling */
+  font-size: 28px; /* Slightly larger heading size */
+  background: rgba(44, 62, 80, 0.5); /* Semi-transparent background for heading */
+  backdrop-filter: blur(8px); /* Apply blur effect to heading */
+  padding: 10px 20px; /* Padding around heading */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Leaderboard table styles */
+.leaderboard-table {
+  width: 100%; /* Full width table */
+  max-width: 1200px; /* Max width to keep table readable */
+  border-collapse: collapse; /* Collapse borders */
+  font-family: 'Arial', sans-serif; /* Font styling */
+  background-color: transparent; /* Clear transparent background for the table */
+  backdrop-filter: blur(8px); /* Apply blur effect to the table */
+  border-radius: 8px; /* Rounded corners for table */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 15px; /* Add padding to table cells */
+  text-align: center; /* Center align text */
+  border-bottom: 1px solid rgba(51, 51, 51, 0.5); /* Semi-transparent border between rows */
+  color: #e0e0e0; /* Light text for table */
+}
+
+.leaderboard-table th {
+  background-color: rgba(0, 123, 255, 0.5); /* Semi-transparent accent color for table headers */
+  color: white; /* White text for headers */
+  font-weight: bold; /* Bold text for headers */
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: rgba(26, 31, 41, 0.5); /* Semi-transparent darker color for even rows */
+}
+
+.leaderboard-table tr:hover {
+  background-color: rgba(51, 51, 51, 0.5); /* Subtle semi-transparent hover effect */
+}
+
+/* Highlight the current user */
+.highlight {
+  background-color: rgba(249, 212, 35, 0.5); /* Bright semi-transparent yellow background for the current user */
+  font-weight: bold; /* Bold the current user's row */
+  color: #000; /* Dark text for better readability */
+}
+
+/* Current user info box */
+.current-user-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1); /* Clear transparent background for user info */
+  backdrop-filter: blur(8px); /* Apply blur effect to user info */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
+  color: #f0f0f0; /* Light text */
+  width: 90%;
+  max-width: 500px; /* Limit width for better readability */
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff6b6b; /* Bright red color for error messages */
+  text-align: center; /* Center align the error message */
+  margin-top: 20px; /* Space above error message */
+  font-size: 18px; /* Larger font size for visibility */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px; /* Smaller padding for smaller screens */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller heading size */
+  }
+}
+
+/* Special styles for the rank column, including rank badges */
+.leaderboard-table .rank {
+  font-weight: bold;
+  font-size: 18px; /* Larger font size for rank */
+  color: rgba(249, 212, 35, 0.9); /* Yellow for top ranks */
+}
+
+/* Loading spinner styles */
+.loading-message {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+/* Keyframes for the spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

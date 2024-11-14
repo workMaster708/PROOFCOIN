@@ -1,0 +1,209 @@
+/* General container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: flex-start; /* Keeps content at the top */
+  width: 100%;
+  height: 100vh;
+  background-color: transparent; /* Clear transparent background */
+  color: white;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  padding: 0; /* No padding */
+  margin: 0; /* No margin */
+}
+
+/* Header Bar */
+.header-bar {
+  width: 100%;
+  background-color: rgba(44, 62, 80, 0.3); /* Clear transparent background with blur */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* User Profile Section */
+.user-profile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 60px; /* Set a specific width */
+  height: 60px; /* Set a specific height */
+  background-color: rgba(52, 152, 219, 0.3); /* Transparent background with blur */
+  backdrop-filter: blur(8px); /* Apply blur to the profile pic */
+  padding: 10px; /* Adjust padding to fit the new size */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+.user-profile h2 {
+  margin-top: 10px;
+  font-size: 22px; /* You can adjust this if needed */
+  text-align: center; /* Ensure text is centered on mobile */
+}
+
+/* Coins Info */
+.coins-info {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center; /* Center the text */
+}
+
+/* Error Message */
+.error-message {
+  color: rgba(255, 0, 0, 0.8); /* Semi-transparent red */
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center; /* Center the error message */
+}
+
+/* Farming Section */
+.farming-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Buttons */
+.farm-button, .claim-button {
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 40px;
+  transition: background-color 0.3s ease;
+  height: 100%;
+  max-height: 50px;
+  min-height: 50px;
+  width: 100%; /* Full width on mobile */
+  max-width: 720px; /* Increased max width for a wider button */
+  min-width: 250px; /* Set a minimum width to avoid shrinking too much */  
+}
+
+.farm-button:hover, .claim-button:hover {
+  background-color: rgb(0, 102, 255); /* Darker transparent background with blur */
+  backdrop-filter: blur(10px); /* Increase blur on hover */
+}
+
+.farm-button:disabled, .claim-button:disabled {
+  background-color: rgba(0, 170, 255, 0.476); /* Transparent disabled state */
+  backdrop-filter: blur(5px); /* Light blur for disabled buttons */
+  cursor: not-allowed;
+}
+
+/* Cooldown Section */
+.cooldown-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cooldown-section p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center; /* Ensure text is centered */
+}
+
+.cooldown {
+  background-color: rgba(127, 140, 141, 0.3); /* Transparent background for cooldown button */
+  backdrop-filter: blur(5px); /* Apply light blur */
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Disabled Timer Button */
+.disabled-timer-button {
+  background-color: rgba(68, 68, 68, 0.3); /* Transparent background for disabled button */
+  backdrop-filter: blur(3px); /* Light blur for disabled button */
+  color: rgb(255, 253, 253); /* Semi-transparent light gray text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: not-allowed;
+  font-size: 16px;
+}
+
+.disabled-timer-button span {
+  margin-left: 8px; /* Space between icon and timer text */
+}
+
+/* Ranking Navigation */
+.ranking-navigation {
+  text-align: center; /* Center the navigation */
+  margin: 10px 0; /* Add some spacing */
+}
+
+.ranking-button {
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width on mobile */
+  max-width: 300px; /* Max width to control scaling */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 20px;
+  }
+
+  .profile-pic {
+    width: 60px; /* Adjust for mobile */
+    height: 60px; /* Adjust for mobile */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .user-profile h2 {
+    font-size: 20px; /* Adjust heading size */
+  }
+
+  .farm-button, .claim-button, .ranking-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    max-width: 100%; /* Remove max-width for full mobile width */
+  }
+
+  .coins-info, .cooldown-section p, .error-message {
+    font-size: 16px; /* Slightly reduce font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-pic {
+    width: 50px; /* Adjust for smaller screens */
+    height: 50px;
+  }
+
+  .farm-button, .claim-button, .ranking-button {
+    font-size: 16px; /* Further adjust for small screens */
+    padding: 8px 12px;
+  }
+
+  .coins-info, .cooldown-section p, .error-message {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+}

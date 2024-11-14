@@ -1,0 +1,92 @@
+/* App Styles */
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* Default font */
+  background: 
+    linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(44, 44, 44, 0.8)), /* Gradient overlay */
+    url('../assets/Images/Proofcoin-BG.jpg'); /* Background image */
+  background-size: cover; /* Make the image cover the entire background */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  color: #e0e0e0; /* Light text color for contrast */
+}
+/* Login Page Styles */
+.login-container {
+  display: flex; /* Flexbox centering */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
+  min-height: 100vh; /* Full viewport height */
+}
+
+.login-container h1 {
+  margin-bottom: 20px; /* Spacing below heading */
+  font-size: 24px; /* Heading font size */
+  color: #e0e0e0; /* Heading color */
+}
+
+.login-container button {
+  background-color: #007bff; /* Button background color */
+  color: #ffffff; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Button text size */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background and scaling on hover */
+}
+
+.login-container button:hover {
+  background-color: #0056b3; /* Darken button on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* General Card Styles */
+.card {
+  background-color: #333; /* Dark card background */
+  border: 1px solid #444; /* Slightly lighter border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Card padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+  margin: 10px 0; /* Spacing between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift the card up slightly */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8); /* More intense shadow on hover */
+}
+
+/* Popup Message Styles */
+.copy-message {
+  margin-top: 10px; /* Space above message */
+  padding: 10px; /* Padding inside message */
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center text */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade in/out and scaling */
+}
+
+.copy-message.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.copy-message.hide {
+  opacity: 0;
+  transform: scale(0.95); /* Slightly shrink when hiding */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px; /* Add padding to login container */
+  }
+  
+  .card {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+}

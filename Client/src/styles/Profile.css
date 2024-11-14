@@ -1,0 +1,42 @@
+.Profile-container {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly visible border */
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  position: relative;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.coins-info {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.username {
+  color: #aaa; /* Lighter color for the username */
+  font-size: 1em;
+}
+
+.bio {
+  color: #ccc; /* Lighter color for the bio */
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: red; /* Error message styling */
+  text-align: center;
+}
