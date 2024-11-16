@@ -1,8 +1,8 @@
-import { Bot } from 'grammy';
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import cors from 'cors';
+const { Bot } = require('grammy');
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
 const BONUS_COINS_PER_REFERRAL = 120; // Define the coins awarded for each referral
 
 dotenv.config();
