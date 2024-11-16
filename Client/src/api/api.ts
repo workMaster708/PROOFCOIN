@@ -4,7 +4,7 @@ import { UserData, TaskData, LeaderboardData, ReferralData, RankingData, UserRan
 // Function to fetch user data by Telegram ID
 export const getUserData = async (userId: string): Promise<UserData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/${userId}`);
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/${userId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch user data');
     }
@@ -19,7 +19,7 @@ export const getUserData = async (userId: string): Promise<UserData> => {
 // Function to start farming coins for a user
 export const farmCoins = async (userId: string): Promise<{ coins: number; coinsToClaim: number }> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/farm`, {
+    const response = await fetch(`https://proofcoin.onrender.com/api/farm`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export const farmCoins = async (userId: string): Promise<{ coins: number; coinsT
 // Function to claim farming coins
 export const claimCoins = async (userId: string): Promise<{ totalCoins: number }> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/claim`, {
+    const response = await fetch(`https://proofcoin.onrender.com/api/claim`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export const claimCoins = async (userId: string): Promise<{ totalCoins: number }
 // Function to add a task for a user
 export const addTask = async (userId: string, taskName: string, points: number): Promise<TaskData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/${userId}/add-task`, {
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/${userId}/add-task`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ export const addTask = async (userId: string, taskName: string, points: number):
 // Function to complete a task for a user
 export const completeTask = async (userId: string, taskName: string): Promise<TaskData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/${userId}/complete-task`, {
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/${userId}/complete-task`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export const completeTask = async (userId: string, taskName: string): Promise<Ta
 // Function to fetch all tasks for a user
 export const getTasks = async (userId: string): Promise<TaskData[]> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/${userId}/tasks`);
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/${userId}/tasks`);
     if (!response.ok) {
       throw new Error('Failed to fetch tasks');
     }
@@ -124,7 +124,7 @@ export const getTasks = async (userId: string): Promise<TaskData[]> => {
 // Function to get the leaderboard data
 export const getLeaderboard = async (): Promise<LeaderboardData[]> => {
   try {
-    const response = await fetch('https://full-app-5ise.onrender.com/api/leaderboard');
+    const response = await fetch('https://proofcoin.onrender.com/api/leaderboard');
     if (!response.ok) {
       throw new Error('Failed to fetch leaderboard');
     }
@@ -139,7 +139,7 @@ export const getLeaderboard = async (): Promise<LeaderboardData[]> => {
 // Function to fetch a user's referral link
 export const getReferralLink = async (userId: string): Promise<ReferralData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/referral-link/${userId}`);
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/referral-link/${userId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch referral link');
     }
@@ -154,7 +154,7 @@ export const getReferralLink = async (userId: string): Promise<ReferralData> => 
 // Function to get user referrals and referral count
 export const getUserReferrals = async (userId: string): Promise<ReferralData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/user/referral/${userId}`);
+    const response = await fetch(`https://proofcoin.onrender.com/api/user/referral/${userId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch referred users');
     }
@@ -169,7 +169,7 @@ export const getUserReferrals = async (userId: string): Promise<ReferralData> =>
 // Function to get rankings data (new functionality)
 export const getRankings = async (): Promise<RankingData[]> => {
   try {
-    const response = await fetch('https://full-app-5ise.onrender.com/api/rankings');
+    const response = await fetch('https://proofcoin.onrender.com/api/rankings');
     if (!response.ok) {
       throw new Error('Failed to fetch rankings');
     }
@@ -184,7 +184,7 @@ export const getRankings = async (): Promise<RankingData[]> => {
 // Function to get user rank based on coins (new functionality)
 export const getUserRank = async (userId: string): Promise<UserRankData> => {
   try {
-    const response = await fetch(`https://full-app-5ise.onrender.com/api/rank/${userId}`);
+    const response = await fetch(`https://proofcoin.onrender.com/api/rank/${userId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch user rank');
     }
