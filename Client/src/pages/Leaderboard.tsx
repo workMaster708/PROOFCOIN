@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { getLeaderboard } from '../api/api'; // Ensure this function is correctly set up to fetch leaderboard data
+import { getLeaderboard } from '../api/api';
 import '../styles/Leaderboard.css';
 
-// Define the structure of each leaderboard entry
+// Define the expected API response structure
+interface LeaderboardData {
+  telegramId?: string; // Telegram ID
+  _id?: string;        // MongoDB ID
+  name?: string;       // User's name
+  coins?: number;      // User's coin count
+}
+
+// Define the leaderboard entry structure
 interface LeaderboardEntry {
   id: string;
   name: string;
   coins: number;
   rank: number;
-}
-
-// Define the expected response structure if getLeaderboard returns an array
-interface LeaderboardResponse {
-  telegramId?: string;
-  _id?: string;
-  name?: string;
-  coins: number;
 }
 
 const Leaderboard: React.FC = () => {
@@ -33,10 +33,10 @@ const Leaderboard: React.FC = () => {
         const response = await getLeaderboard(); // Fetch leaderboard data
 
         if (Array.isArray(response)) {
-          const formattedData: LeaderboardEntry[] = response.map((entry: LeaderboardResponse, index) => ({
-            id: entry.telegramId || entry._id || 'Unknown',
+          const formattedData: LeaderboardEntry[] = response.map((entry: LeaderboardData, index) => ({
+            id: entry.telegramId || entry._id || `unknown-${index}`,
             name: entry.name || 'Anonymous',
-            coins: entry.coins,
+            coins: entry.coins || 0, // Default to 0 if coins is undefined
             rank: index + 1, // Assign ranks based on position
           }));
 
@@ -48,7 +48,7 @@ const Leaderboard: React.FC = () => {
           setLeaderboard(top100); // Update leaderboard state with top 100
 
           // Find the current user in the entire leaderboard (not limited to 100)
-          const currentUserData = formattedData.find(user => user.id === userId);
+          const currentUserData = sortedData.find(user => user.id === userId);
           if (currentUserData) {
             setCurrentUser(currentUserData); // Set current user's data
           }
@@ -74,7 +74,6 @@ const Leaderboard: React.FC = () => {
     );
   }
 
-  // Display error state
   if (error) {
     return <p className="error-message">{error}</p>;
   }
@@ -110,7 +109,6 @@ const Leaderboard: React.FC = () => {
         </tbody>
       </table>
 
-      {/* Display current user's rank and coin count below the table */}
       {currentUser && (
         <div className="current-user-info">
           <h2>Your Info</h2>
@@ -119,7 +117,6 @@ const Leaderboard: React.FC = () => {
             <br />
             <strong>Rank:</strong>{' '}
             {leaderboard.findIndex(user => user.id === currentUser.id) + 1}
-            {/* Find user rank within the top 100 */}
             <br />
             <strong>Coins:</strong> {currentUser.coins}
           </p>

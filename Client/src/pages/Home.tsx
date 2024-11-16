@@ -7,11 +7,13 @@ import '../styles/Home.css';
 import Proof from '../components/PRoofing'; // Import the Gear animation
 import Spinner from '../components/Spinner'; // Import the Spinner component
 
-
-// Define the expected structure of user data
+// Define the expected structure of user data, including the properties returned by the API
 interface UserData {
   id: string;
   first_name: string;
+  coins: number;
+  coinsToClaim: number;
+  lastFarmingTime?: string;
 }
 
 const Home: React.FC = () => {
@@ -62,7 +64,10 @@ const Home: React.FC = () => {
 
       const userData: UserData = {
         id: response.id,
-        first_name: response.name,
+        first_name: response.first_name,  // Adjusted to match the API response
+        coins: response.coins,
+        coinsToClaim: response.coinsToClaim,
+        lastFarmingTime: response.lastFarmingTime,
       };
       setUserData(userData);
 
